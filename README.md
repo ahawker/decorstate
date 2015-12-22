@@ -1,5 +1,7 @@
 # decorstate
 
+[![Build Status](https://travis-ci.org/ahawker/decorstate.svg)](https://travis-ci.org/ahawker/decorstate)
+
 Build dumb little "state machines" with Python decorators.
 
 ## Usage
