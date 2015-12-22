@@ -4,7 +4,21 @@
 
 Build dumb little "state machines" with Python decorators.
 
-## Usage
+### Installation
+
+To install decorstate from [pip](https://pypi.python.org/pypi/pip):
+```bash
+    $ pip install decorstate
+```
+
+To install decorstate from source:
+```bash
+    $ git clone git@github.com:ahawker/decorstate.git
+    $ cd decorstate
+    $ python setup.py install
+```
+
+### Usage
 
 How do I use this pile?
 
