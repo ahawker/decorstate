@@ -12,7 +12,7 @@ except ImportError:
 setup(
     name=__name__,
     version=__version__,
-    description='',
+    description='Simple "state machines" with Python decorators',
     long_description=open('README.md').read(),
     author='Andrew Hawker',
     author_email='andrew.r.hawker@gmail.com',
