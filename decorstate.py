@@ -7,11 +7,7 @@
     :copyright: (c) 2015 Andrew Hawker.
     :license: Apache 2.0, See LICENSE file.
 """
-from __future__ import unicode_literals
-
-
-__all__ = ['transition']
-
+from __future__ import unicode_literals, print_function
 
 import collections
 import contextlib
@@ -19,6 +15,12 @@ import functools
 import logging
 import threading
 import time
+
+
+__name__ = 'decorstate'
+__version__ = '0.0.1'
+__author__ = 'Andrew Hawker <andrew.r.hawker@gmail.com>'
+__all__ = ['transition']
 
 
 LOGGER = logging.getLogger(__name__)
