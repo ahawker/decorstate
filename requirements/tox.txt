@@ -1,0 +1,7 @@
+# decorstate/requirements/tox.txt
+#
+# Requirements for executing this package test suite using tox.
+
+-r test.txt
+
+tox

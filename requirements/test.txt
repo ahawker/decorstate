@@ -1,0 +1,10 @@
+# decorstate/requirements/test.txt
+#
+# Requirements for executing this package test suite.
+
+-r base.txt
+
+pytest
+pytest-cov
+pytest-mock
+pytest-pep8
