@@ -1,11 +1,10 @@
 sudo: false
 language: python
-
 python:
   - "2.7"
+install: make travis-install
+script: make travis-script
+after_success: codeclimate-test-reporter
+notifications:
+  slack: CvIqov8faLXQeH2oAW/F/3C3/NiMzHbYDAB6GpFefV13xubG1F9oOxtzfTOPpBsNo/wECUjHjZgXPrSr2ncQchR36QgjbWeQqru8zbxtsepuJlrOWducsc5b3BcPDGQJc6ip+dmHGM3QqUxjMGaVI4gdTyVJgyW77OSOIHQ9krptwalth8p5zqqUuRYcCc8PLv4wAlZ5kqwIEB3+VJvOhUiULOwOr23SXZgJIKn/dmZIlciZDD1SfL2UVqTf96h4UJvjryciyuw1XIUBaS/d5wNMAR/v0zZbyrjwIVk/B3iiYQJmYefKOdYfOxlK7RMz1LwP18SZ3RS9pe6w/ucMfGb5oqwKntryNshkAx5h8EGj9V3AooGYRzS0wfU8dThx6ImQYC75aX11dQZmTic48Qaea4P1ANmXIWvTZP7Vg3j+p/7BUDdAcIVHk+dMthe7UuB2KDehUGO5xIF9uUJ3OnyBxagD4Zum6OHSr6Ob4WdWMxdutyPRpB9o3a5KMLFIF6kqB9DuRnVTwsEsZ/yZufPsjrl/q5P9PhquHtUxzm+m2Ku5FKHOtLNC+rtwpVf1J5nTgNJUsuvZqeJk42wuPBZ86AxJ5/thBX7VmbWapg4TJgV1tek6lDXoZUe0E0naTIw5LBpSn2Hrvm3jU1E4/UlKE3wZ2ewLV1SGTG8tWQ0=
 
-install:
-  - pip install tox
-
-script:
-  - tox
