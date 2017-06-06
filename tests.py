@@ -1,6 +1,6 @@
 """
-    test/test_decorstate
-    ~~~~~~~~~~~~~~~~~~~~
+    tests
+    ~~~~~
 
     Tests for the :mod:`~decorstate` module.
 """

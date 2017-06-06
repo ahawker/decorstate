@@ -1,7 +1,7 @@
 [run]
 source = decorstate
 branch = true
-omit = test_decorstate.py
+omit = tests.py
 
 [report]
 exclude_lines =

@@ -6,7 +6,7 @@ test-install:  ## Install dependencies required for local test execution.
 
 .PHONY: test
 test: test-install  ## Run test suite.
-	@py.test -v test_decorstate.py
+	@py.test -v tests.py
 
 .PHONY: tox-install
 tox-install:  ## Install dependencies required for local test execution using tox.
