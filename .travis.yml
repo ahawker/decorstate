@@ -5,6 +5,29 @@ python:
 install: make travis-install
 script: make travis-script
 after_success: codeclimate-test-reporter
+deploy:
+- provider: pypi
+  server: https://testpypi.python.org/pypi
+  user: Andrew.Hawker
+  password:
+    secure: uzeOgGqln3Sx/c/uGn/VdRfO/rnAgFRAyiL5qCddqc9JRrh9RZC0PJbXztg4U61fW3Q1sY4CQh85VnZb2UuXKvMl4EGZMPWaWCGJUGsQ1Egu2YpvC9V7ZqwRJA4BD6FM95HRnHNEru2/JZC2b/j+GUTC5+m6zBTtsAcaHIBgiALGU/SZm+ddq93zJUlBCeESbWqZxUynB7F2qX8uc8xXYMJY5UGDWc7Yx9kHGhF9qLZ+ulxBRH/PpE3/HTm85mNPbc79fiDINW/CNrcIjGvt1JWEs9jl6tYcpzzOe1wmmgotd9mRY6O82p30U+HK6qVTNA8naPd6KwshxPEoV+AL/A1bwS9A7ZgQ5aaRomGCrPk+RwxZ+C+2FYB/377+i81Wu795r51nUlE7tdIabW2VpaIGl/nuLsloOKasnF/fiaxoovu2tdU1t2WMPTG8TBS5oHFRmxArtFs9w+NqxBEjKAlflvLeas20W7bJTXW8D176kgUcOW6lG4+W0SSs8Zosbzlpkty8K4ht3sIWsufEDB/lRmy/uuOKGhHPcwuZ2gwcUDBsOS5umWJkO+TErjRy2F5S33C42QAiwkL8Ze86cwihM0Dfm2v1Q6+pTo7b/XhDXvvqH7M/a+MWP1uGHSNpXkHwUuOAVS0914qq7432tz3nFiAxiWpvZ/zlzV5c8dw=
+  distributions: sdist bdist_wheel
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: false
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
+- provider: pypi
+  server: https://pypi.python.org/pypi
+  user: Andrew.Hawker
+  password:
+    secure: LfXGNr2Fyxh+WgOZQCanBcooEiCkvkJOY7+M/s7aQLAwqWol+EbypOqOEABHYV7Vhl1QZ6CH1HHtNlNhCOYUFyZD+kVmDsTRjDAv14U89DKKpyNlhdKhmplAK03RJJZ/vGrvuTZY9oltGb7UbcNhLS84JI1jqkk95gKrEkGT0oPSWEEk7xooWrVoQmXNTYGv1v+6fWMJ3y+Urx7gtI6QzzUW2HpzXD2B7JVeXEuIW1m7LWKgkqVYsAzceP/nOgndOYkpEJPgsvvCUPl+1HTp31N+RPJ9JBxOkOLBKp+NPkVx6SK4pzfr26cREurqtoS0bXfoKKFHqCMHkSjGKxVXMc5iZ4o3rssEoLw9qxxwtX8nTt5JMXMuclzSQsrArF2utlBRQlWdcFZV3ZwEIE2aR9yXEDWdPkIb/2ADXFzSe6t7LpIobVMRbrJhnsU2j5l4w3i3CkCquWwNrKZ4ijE16P6A/LdjU1pw8V0iE1k4RxGXsMSoDDPwsurqqGFqONOJFCVfQrJosOXz2A6YskqPEgvl23E5xjyNXJTXCQr1Wr6td0X95P2M2wx+myU191LFImTLDKkczF/TCqbvNU/3qLZ0iwkB8KSIQM3QyxbSqNExi8jjNyc9yO9x4Ba7LZ02JkIYgf1T/Ogbuf2vs3BJt8/yUVY47r+QRbzdOAgQtuU=
+  distributions: sdist bdist_wheel
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: true
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
 notifications:
   slack:
     secure: DaTS2wAU8aP1++k1dZfksZjSWb4xsdCMA4rX1exmaxMWBoxIJzoSNqAr/Kgo80wlmMhmHGUM5TW/JLnesvT3ExeFCr0G5pORJjBr3xmSv9TL6pyshN7TBLaXNKcvTMJQuOQ0UEAdI57bNIqtdNiXHCiq/urH90tGvlVTZ38CJ13aZS6nsuRnFaMKg+oBQjsuY7JpA6kx31Xf9W+lyktcoU8Y6whFcMr7xV/j63DkqhIVpsdxNhlJNfgMIh00UBz21tIvqmBPk8WjVTmqZAzMfuGd5UkzD2AOtZsf+k0sAkcJWokVivr9WkUG1zA7Ijtsuo168w1b4sZlQpwuHSq9uXOJuwx2SUZwXsiTvS4Ew33V/0TecVlbAJM+VNcqBW4+SVKAUjYzArcIPe6l9/lY9OGwhtE9HGHijP5RBbwjLHnjFGk1GRIPpyDDGxgeGnba5DEYC4l1O8+CzibEktIa6m3lnCbSvN192/zFQsRiz5X29ol0CNIX2mGeUiHgAe1uYfPTPENruD/TLjYAaxAr4UDvLIkbSQHJMrqcwtAkwDCs18fIroj/ok5B6xTGEzPH2MPQ3a6SPR0ptENFgOu5AFRuQxVoEDIA+StkTOtxhKcgbBu5AlzdCXe28QVXw4RMhiZHYwLOoRZBvfm+/wPcH9F0YMx/Ld/WPs3dinY2bZI=
