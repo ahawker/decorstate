@@ -4,6 +4,8 @@
 
 -r base.txt
 
+coverage>4.0,<4.4
+
 pytest
 pytest-cov
 pytest-mock
