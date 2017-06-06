@@ -1,8 +1,12 @@
-__name__ = 'decorstate'
-__version__ = '0.0.1'
-__author__ = 'Andrew Hawker <andrew.r.hawker@gmail.com>'
+"""
+    decorstate
+    ~~~~~~~~~~
 
+    Simple "state machines" with Python decorators.
 
+    :copyright: (c) 2015-2017 Andrew Hawker
+    :license: Apache 2.0, see LICENSE for more details.
+"""
 try:
     from setuptools import setup
 except ImportError:
@@ -10,8 +14,8 @@ except ImportError:
 
 
 setup(
-    name=__name__,
-    version=__version__,
+    name='decorstate',
+    version='0.0.1',
     description='Simple "state machines" with Python decorators',
     long_description=open('README.md').read(),
     author='Andrew Hawker',
@@ -25,6 +29,7 @@ setup(
         'Natural Language :: English',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2'
         'Programming Language :: Python :: 2.7'
     )
 )
