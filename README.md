@@ -5,6 +5,10 @@
 [![Code Climate](https://codeclimate.com/github/ahawker/decorstate/badges/gpa.svg)](https://codeclimate.com/github/ahawker/decorstate)
 [![Issue Count](https://codeclimate.com/github/ahawker/decorstate/badges/issue_count.svg)](https://codeclimate.com/github/ahawker/decorstate)
 
+[![PyPI Version](https://badge.fury.io/py/decorstate.svg)](https://badge.fury.io/py/decorstate)
+[![PyPI Versions](https://img.shields.io/pypi/pyversions/decorstate.svg)](https://pypi.python.org/pypi/decorstate)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/decorstate.svg)](https://pypi.python.org/pypi/decorstate)
+
 Build dumb little "state machines" with Python decorators.
 
 ### Installation
