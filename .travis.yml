@@ -2,6 +2,11 @@ sudo: false
 language: python
 python:
 - '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+- '3.6'
+- 'nightly'
 install: make travis-install
 script: make travis-script
 after_success: codeclimate-test-reporter
