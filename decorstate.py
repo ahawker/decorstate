@@ -274,6 +274,9 @@ def wait_for_state(machine, state, timeout=None):
     end = None
     remaining = timeout
 
+    if not initialized(machine):
+        return False
+
     with machine.transition_event:
         while machine.state != state:
             if timeout is not None:
@@ -294,3 +297,13 @@ def set_attr_default(obj, name, default=None):
     """
     if not hasattr(obj, name):
         setattr(obj, name, default)
+
+
+def initialized(machine):
+    """
+    Check to see if the given machine is initialized.
+
+    :param machine: Machine to check to see if default attributes are set
+    :return: `True` if the machine has its attributes set, `False` otherwise
+    """
+    return all(hasattr(machine, attr) for attr in ('state', 'transition', 'transition_event'))
