@@ -202,7 +202,6 @@ def test_set_attr_default_ignores_when_defined():
     assert Foo.exists is True
 
 
-@pytest.mark.xfail(reason='Attibutes are lazy-created with removal of @machine decorator.')
 def test_wait_for_state_returns_true_on_transition(switch):
     """
     Assert that :func:`~decorstate.wait_for_state` returns `True` on a transition.
@@ -210,14 +209,17 @@ def test_wait_for_state_returns_true_on_transition(switch):
     notified_event = threading.Event()
 
     def waiter(timeout=None):
-        switched = decorstate.wait_for_state(switch, 'on', timeout)
+        switched = decorstate.wait_for_state(switch, 'off', timeout)
         if switched:
             notified_event.set()
+
+    switch.on()
 
     t = threading.Thread(target=waiter)
     t.start()
 
-    switch.on()
+    switch.off()
+
     time.sleep(1)
 
     assert notified_event.is_set()
