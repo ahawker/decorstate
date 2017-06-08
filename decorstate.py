@@ -13,6 +13,7 @@ import collections
 import contextlib
 import functools
 import logging
+import sys
 import threading
 import time
 
@@ -21,6 +22,14 @@ __all__ = ['transition']
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+if sys.version_info[0] == 2:
+    Condition = threading._Condition
+    str_types = basestring
+else:
+    Condition = threading.Condition
+    str_types = str
 
 
 def noop(*args, **kwargs):
@@ -34,12 +43,12 @@ def iterable(item):
     """
     Return an iterable that contains the given item or itself if it already is one.
     """
-    if isinstance(item, collections.Iterable) and not isinstance(item, basestring):
+    if isinstance(item, collections.Iterable) and not isinstance(item, str_types):
         return item
     return [item] if item is not None else []
 
 
-class TransitionChangedEvent(threading._Condition):
+class TransitionChangedEvent(Condition):
     """
     Threading condition that is notified whenever a machine performs a state transition.
     """
