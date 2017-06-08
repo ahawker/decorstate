@@ -23,7 +23,11 @@ __all__ = ['transition']
 LOGGER = logging.getLogger(__name__)
 
 
-NOOP = lambda *args, **kwargs: True
+def noop(*args, **kwargs):
+    """
+    Dummy method that just returns :bool:`True`.
+    """
+    return True
 
 
 def iterable(item):
@@ -103,11 +107,11 @@ class Transition(object):
         self.current_state = current_state
         self.next_state = next_state
         self.action = action
-        self.condition = condition or NOOP
-        self.on_enter = enter or NOOP
-        self.on_exit = exit or NOOP
-        self.on_before = before or NOOP
-        self.on_after = after or NOOP
+        self.condition = condition or noop
+        self.on_enter = enter or noop
+        self.on_exit = exit or noop
+        self.on_before = before or noop
+        self.on_after = after or noop
 
     def __call__(self, func, *args, **kwargs):
         if func is not None:
