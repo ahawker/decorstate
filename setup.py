@@ -15,7 +15,7 @@ except ImportError:
 
 setup(
     name='decorstate',
-    version='0.0.2',
+    version='0.0.3',
     description='Simple "state machines" with Python decorators',
     long_description=open('README.md').read(),
     author='Andrew Hawker',
